@@ -18,6 +18,11 @@
   overflow-x: auto;
 }
 
+.logo-main > img {
+  height: 50px;
+  margin: 0.5em;
+}
+
 .logo-main > p {
   margin: 0.5em;
   height: 50px;
