@@ -1,0 +1,32 @@
+.contact-info-main {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+.contact-info-title {
+  margin: 0.3em;
+}
+
+.contact-table > tbody > tr {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+}
+
+.contact-table > tbody > tr > td > i {
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.contact-table > tbody > tr > td > p {
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 0em;
+}
+
+.contact-table > tbody > tr:first-child {
+}
+
+.contact-table > tbody > tr:last-child {
+}
