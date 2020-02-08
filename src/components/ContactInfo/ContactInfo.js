@@ -4,8 +4,8 @@ import "./contactInfo.css";
 const ContactInfo = () => {
   return (
     <div className="contact-info-main">
-      <h2 className="contact-info-title">Contact Info</h2>
-      <hr></hr>
+      {/* <h2 className="contact-info-title">Contact Info</h2> */}
+      {/* <hr></hr> */}
       <table className="contact-table">
         <tbody>
           <tr>

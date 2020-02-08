@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header/Header";
 import CarouselThree from "./components/CarouselThree/CarouselThree";
+import EducationCard from "./components/EducationCard/EducationCard";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -9,7 +10,16 @@ function App() {
     <div className="App">
       <Header></Header>
       <CarouselThree />
-      <h1>Education</h1>
+      <div className="education-cards">
+        <EducationCard
+          title="Arizona State University"
+          description="Bachelor of Interdisciplinary Sciences"
+        ></EducationCard>
+        <EducationCard
+          title="Self-Taught"
+          description="Lots of documentation."
+        ></EducationCard>
+      </div>
       <h1>Experience</h1>
       <h1>About Me?</h1>
       <h1>

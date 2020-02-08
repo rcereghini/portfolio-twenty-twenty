@@ -2,6 +2,7 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 0.5em;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .contact-info-title {
@@ -16,12 +17,14 @@
 .contact-table > tbody > tr > td > i {
   padding: 1em;
   border: 1px solid #ddd;
+  background-color: white;
   border-radius: 5px;
 }
 .contact-table > tbody > tr > td > p {
   padding: 1em;
   border: 1px solid #ddd;
   border-radius: 5px;
+  background-color: white;
   margin: 0em;
 }
 

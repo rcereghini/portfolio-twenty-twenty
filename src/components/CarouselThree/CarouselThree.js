@@ -11,28 +11,36 @@ function Box(props) {
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
-
+  let rotateCap = 0;
+  let clockwiseRotate = false;
   // Rotate mesh every frame, this is outside of React without overhead
-  useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01));
+  useFrame(() => {
+    if (rotateCap >= 150) {
+      clockwiseRotate = !clockwiseRotate;
+      rotateCap = 0;
+    }
+    if (clockwiseRotate) {
+      mesh.current.rotation.y += 0.003;
+    } else {
+      mesh.current.rotation.y -= 0.003;
+    }
+    rotateCap++;
+  });
 
   return (
     <mesh
       {...props}
       ref={mesh}
-      scale={active ? [0.5, 0.5, 0.5] : [2, 2, 2]}
+      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
       onClick={e => setActive(!active)}
       onPointerOver={e => setHover(true)}
       onPointerOut={e => setHover(false)}
     >
       <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <meshStandardMaterial attach="material" color={hovered ? "blue" : "red"}>
-        {" "}
-        <texture
-          attach="map"
-          image={img}
-          onUpdate={self => img && (self.needsUpdate = true)}
-        />
-      </meshStandardMaterial>
+      <meshStandardMaterial
+        attach="material"
+        color={hovered ? "firebrick" : "orange"}
+      />
     </mesh>
   );
 }
@@ -40,11 +48,11 @@ function Box(props) {
 const CarouselThree = () => {
   return (
     <div>
-      <Canvas>
+      <Canvas style={{ height: "400px" }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <Box position={[-1.8, 0, 0]} />
-        <Box position={[1.8, 0, 0]} />
+        <Box position={[-4.8, 0, 0]} />
+        <Box position={[4.8, 0, 0]} />
       </Canvas>
     </div>
   );

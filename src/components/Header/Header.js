@@ -7,6 +7,7 @@ import csharpLogo from "../../assets/logos/csharp.png";
 import firebaseLogo from "../../assets/logos/firebase.png";
 import jsLogo from "../../assets/logos/js.png";
 import vueLogo from "../../assets/logos/vue.png";
+import nodeLogo from "../../assets/logos/node.png";
 import reactLogo from "../../assets/logos/react.png";
 import reduxLogo from "../../assets/logos/Redux.png";
 import "./header.css";
@@ -24,16 +25,17 @@ const Header = () => {
         <img className="logo-main" src={reactLogo}></img>
         <img className="logo-main" src={reduxLogo}></img>
         <img className="logo-main" src={vueLogo}></img>
+        <img className="logo-main" src={nodeLogo}></img>
         <img className="logo-main" src={firebaseLogo}></img>
         <img className="logo-main" src={csharpLogo}></img>
         <img className="logo-main" src={sqlLogo}></img>
+        {/* <img className="logo-main" src={vueLogo}></img>
         <img className="logo-main" src={vueLogo}></img>
         <img className="logo-main" src={vueLogo}></img>
         <img className="logo-main" src={vueLogo}></img>
         <img className="logo-main" src={vueLogo}></img>
         <img className="logo-main" src={vueLogo}></img>
-        <img className="logo-main" src={vueLogo}></img>
-        <img className="logo-main" src={vueLogo}></img>
+        <img className="logo-main" src={vueLogo}></img> */}
       </div>
       <ContactInfo></ContactInfo>
     </div>
