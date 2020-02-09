@@ -1,0 +1,18 @@
+.exp-ticker-main {
+  font-size: 2.7em;
+  display: inline-block;
+}
+
+.exp-ticker-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.exp-ticker-count {
+  text-align: right;
+}
+
+.exp-ticker-label {
+  padding-left: 0.3em;
+  text-align: left;
+}

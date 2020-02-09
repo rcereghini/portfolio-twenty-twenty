@@ -52,6 +52,7 @@ const CarouselThree = () => {
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
         <Box position={[-4.8, 0, 0]} />
+        <Box position={[0, 0, 2]} />
         <Box position={[4.8, 0, 0]} />
       </Canvas>
     </div>
