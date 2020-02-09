@@ -1,0 +1,16 @@
+.work-history-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.work-history-item {
+  padding: 0em;
+}
+
+.work-history-title {
+  margin: 0em;
+  padding: 0.5em;
+  background: linear-gradient(to bottom, #f4f6ff 0%, #e6eef7 44%, #e3e8ed 100%);
+}
