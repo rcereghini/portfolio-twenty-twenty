@@ -8,6 +8,10 @@ const workHistoryRecords = [
     description: "Did wonderful things and greatness."
   },
   {
+    title: "Freelance Web Development",
+    description: "Moreso free than anything..."
+  },
+  {
     title: "Neureka, Web Developer",
     description: "Did wonderful things and greatness."
   },
