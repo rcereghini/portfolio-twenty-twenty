@@ -11,8 +11,11 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
+      <h2>Projects</h2>
       <CarouselThree />
+      <h2>Work History</h2>
       <WorkHistory />
+      <h2>Experience</h2>
       <div className="education-cards">
         <ExperienceTicker
           count={2000}
