@@ -17,7 +17,10 @@ function App() {
       <h2>Projects</h2>
       <ProjectViewer selectedBox={selectedBox} />
       <ProjectCarousel
-        boxClickCallback={eventFromBoxClick => setSelectedBox(1)}
+        boxClickCallback={eventFromBoxClick => {
+          const boxKey = eventFromBoxClick.object.boxKey;
+          setSelectedBox(boxKey);
+        }}
       />
       <h2>Work History</h2>
       <WorkHistory />

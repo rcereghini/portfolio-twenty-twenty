@@ -10,7 +10,7 @@ function Box(props) {
 
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false);
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   let rotateCap = 0;
   let clockwiseRotate = false;
   // Rotate mesh every frame, this is outside of React without overhead
@@ -31,13 +31,25 @@ function Box(props) {
     <mesh
       {...props}
       ref={mesh}
-      scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
+      scale={[1, 1, 1]}
       onClick={e => {
-        setActive(!active);
+        console.log(e);
+        let sceneMeshes = e.object.parent.children.filter(sceneObject => {
+          return sceneObject.type === "Mesh";
+        });
+
+        sceneMeshes.forEach(mesh => {
+          console.log("mesh.boxKey =>", mesh.boxKey);
+          if (mesh.boxKey === e.object.boxKey) {
+            mesh.scale.set(3, 3, 3);
+            console.log("match!");
+          } else mesh.scale.set(1, 1, 1);
+        });
+
         props.boxClickCallback(e);
       }}
-      onPointerOver={e => setHover(true)}
-      onPointerOut={e => setHover(false)}
+      // onPointerOver={e => setHover(true)}
+      // onPointerOut={e => setHover(false)}
     >
       <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
       <meshStandardMaterial
@@ -57,12 +69,17 @@ const ProjectCarousel = props => {
 
   return (
     <div>
-      <Canvas style={{ height: "400px" }}>
+      <Canvas style={{ height: "300px" }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        {boxes.map(box => {
+        {boxes.map((box, i) => {
           return (
-            <Box boxClickCallback={props.boxClickCallback} position={box} />
+            <Box
+              boxKey={i + 1}
+              key={i + 1}
+              boxClickCallback={props.boxClickCallback}
+              position={box}
+            />
           );
         })}
       </Canvas>

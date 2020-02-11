@@ -3,7 +3,7 @@ import "./projectViewer.css";
 
 const ProjectViewer = props => {
   return (
-    <div>
+    <div className="project-viewer-main">
       Project Viewer
       <p>Viewing Box: {props.selectedBox}</p>
     </div>
