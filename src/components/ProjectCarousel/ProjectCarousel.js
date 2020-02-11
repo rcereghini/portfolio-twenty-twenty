@@ -32,7 +32,10 @@ function Box(props) {
       {...props}
       ref={mesh}
       scale={active ? [1.5, 1.5, 1.5] : [1, 1, 1]}
-      onClick={e => setActive(!active)}
+      onClick={e => {
+        setActive(!active);
+        props.boxClickCallback(e);
+      }}
       onPointerOver={e => setHover(true)}
       onPointerOut={e => setHover(false)}
     >
@@ -45,18 +48,26 @@ function Box(props) {
   );
 }
 
-const CarouselThree = () => {
+const ProjectCarousel = props => {
+  let boxes = [
+    [-4.8, 0, 0],
+    [0, 0, 2],
+    [4.8, 0, 0]
+  ];
+
   return (
     <div>
       <Canvas style={{ height: "400px" }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <Box position={[-4.8, 0, 0]} />
-        <Box position={[0, 0, 2]} />
-        <Box position={[4.8, 0, 0]} />
+        {boxes.map(box => {
+          return (
+            <Box boxClickCallback={props.boxClickCallback} position={box} />
+          );
+        })}
       </Canvas>
     </div>
   );
 };
 
-export default CarouselThree;
+export default ProjectCarousel;
