@@ -24,10 +24,8 @@ function App() {
       <ProjectCarousel
         boxes={projectBoxes}
         boxClickCallback={eventFromBoxClick => {
-          console.log("projectBoxes =>", projectBoxes);
-          let boxes = projectBoxes;
-          console.log(boxes);
           const { boxKey } = eventFromBoxClick.object;
+          let boxes = projectBoxes;
           setProjectBoxes([projectBoxes[boxKey - 1]]);
           setSelectedBox(boxKey);
         }}
