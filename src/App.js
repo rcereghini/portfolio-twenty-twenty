@@ -10,6 +10,11 @@ import "./App.css";
 
 function App() {
   const [selectedBox, setSelectedBox] = useState(0);
+  const [projectBoxes, setProjectBoxes] = useState([
+    [-4.8, 0, 0],
+    [0, 0, 2],
+    [4.8, 0, 0]
+  ]);
 
   return (
     <div className="App">
@@ -17,8 +22,13 @@ function App() {
       <h2>Projects</h2>
       <ProjectViewer selectedBox={selectedBox} />
       <ProjectCarousel
+        boxes={projectBoxes}
         boxClickCallback={eventFromBoxClick => {
-          const boxKey = eventFromBoxClick.object.boxKey;
+          console.log("projectBoxes =>", projectBoxes);
+          let boxes = projectBoxes;
+          console.log(boxes);
+          const { boxKey } = eventFromBoxClick.object;
+          setProjectBoxes([projectBoxes[boxKey - 1]]);
           setSelectedBox(boxKey);
         }}
       />

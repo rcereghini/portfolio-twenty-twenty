@@ -33,16 +33,13 @@ function Box(props) {
       ref={mesh}
       scale={[1, 1, 1]}
       onClick={e => {
-        console.log(e);
         let sceneMeshes = e.object.parent.children.filter(sceneObject => {
           return sceneObject.type === "Mesh";
         });
 
         sceneMeshes.forEach(mesh => {
-          console.log("mesh.boxKey =>", mesh.boxKey);
           if (mesh.boxKey === e.object.boxKey) {
             mesh.scale.set(3, 3, 3);
-            console.log("match!");
           } else mesh.scale.set(1, 1, 1);
         });
 
@@ -61,27 +58,23 @@ function Box(props) {
 }
 
 const ProjectCarousel = props => {
-  let boxes = [
-    [-4.8, 0, 0],
-    [0, 0, 2],
-    [4.8, 0, 0]
-  ];
-
   return (
     <div>
       <Canvas style={{ height: "300px" }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        {boxes.map((box, i) => {
-          return (
-            <Box
-              boxKey={i + 1}
-              key={i + 1}
-              boxClickCallback={props.boxClickCallback}
-              position={box}
-            />
-          );
-        })}
+        {props.boxes
+          ? props.boxes.map((box, i) => {
+              return (
+                <Box
+                  boxKey={i + 1}
+                  key={i + 1}
+                  boxClickCallback={props.boxClickCallback}
+                  position={box}
+                />
+              );
+            })
+          : null}
       </Canvas>
     </div>
   );
