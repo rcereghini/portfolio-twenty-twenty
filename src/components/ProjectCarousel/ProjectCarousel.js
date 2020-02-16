@@ -3,17 +3,16 @@ import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import img from "../../assets/metal.jpg";
 import { logDOM } from "@testing-library/react";
+import "./projectCarousel.css";
 
 function Box(props) {
-  // This reference will give us direct access to the mesh
   const mesh = useRef();
 
-  // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false);
   // const [active, setActive] = useState(false);
   let rotateCap = 0;
   let clockwiseRotate = false;
-  // Rotate mesh every frame, this is outside of React without overhead
+
   useFrame(() => {
     if (rotateCap >= 150) {
       clockwiseRotate = !clockwiseRotate;
@@ -31,7 +30,7 @@ function Box(props) {
     <mesh
       {...props}
       ref={mesh}
-      scale={[1, 1, 1]}
+      scale={[2, 2, 2]}
       onClick={e => {
         let sceneMeshes = e.object.parent.children.filter(sceneObject => {
           return sceneObject.type === "Mesh";
@@ -59,23 +58,25 @@ function Box(props) {
 
 const ProjectCarousel = props => {
   return (
-    <div>
-      <Canvas style={{ height: "300px" }}>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
-        {props.boxes
-          ? props.boxes.map((box, i) => {
-              return (
-                <Box
-                  boxKey={i + 1}
-                  key={i + 1}
-                  boxClickCallback={props.boxClickCallback}
-                  position={box}
-                />
-              );
-            })
-          : null}
-      </Canvas>
+    <div className="project-carousel-main">
+      <div className="project-carousel-inner">
+        <Canvas style={{ height: "100px" }}>
+          <ambientLight />
+          <pointLight position={[10, 10, 10]} />
+          {props.boxes
+            ? props.boxes.map((box, i) => {
+                return (
+                  <Box
+                    boxKey={i + 1}
+                    key={i + 1}
+                    boxClickCallback={() => props.boxClickCallback(box)}
+                    position={box.boxLocation}
+                  />
+                );
+              })
+            : null}
+        </Canvas>
+      </div>
     </div>
   );
 };

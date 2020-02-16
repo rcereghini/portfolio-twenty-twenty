@@ -1,0 +1,21 @@
+.project-card-main {
+  width: 600px;
+  height: 600px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+.project-card-description {
+  font-size: 1.5em;
+}
+
+.project-card-image {
+  border-bottom: 1px solid #ddd;
+  width: 600px;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}

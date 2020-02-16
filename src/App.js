@@ -9,25 +9,49 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [selectedBox, setSelectedBox] = useState(0);
+  const [selectedBox, setSelectedBox] = useState({});
   const [projectBoxes, setProjectBoxes] = useState([
-    [-4.8, 0, 0],
-    [0, 0, 2],
-    [4.8, 0, 0]
+    {
+      projectTitle: "News Feed",
+      projectDescription: "News Feed",
+      projectImage:
+        "https://www.rcereghini.com/static/newsFeed-7ea32f8f4d7f3393faf91795d4faf8df.jpg",
+      projectGithub: "",
+      projectLink: "https://wonderful-edison-f69832.netlify.com/",
+      boxLocation: [-10, 0, 0]
+    },
+    {
+      projectTitle: "Open Gym Finder",
+      projectDescription:
+        "Full-stack application inteded to be a PWA. Currently in development. Uses React w/ Firebase.",
+      projectImage:
+        "https://www.rcereghini.com/static/openGymFinder-02857628901a5c48bc4d40a256cfd0fa.jpg",
+      projectGithub: "https://github.com/rcereghini/open-gym-finder",
+      projectLink: "https://distracted-tesla-7c4b19.netlify.com/",
+      boxLocation: [0, 0, 2]
+    },
+    {
+      projectTitle: "Face Finder",
+      projectDescription:
+        "A facial recognition app using React, Redux, Node.js, Clarifai, Tachyons, Particles, Tilt, and Heroku.",
+      projectImage:
+        "https://www.rcereghini.com/static/box3-bbe769fb7162b131d01e76e38dc146a0.png",
+      projectGithub: "",
+      projectLink: "https://facial-recognition-counter.herokuapp.com/",
+      boxLocation: [10, 0, 0]
+    }
   ]);
 
   return (
     <div className="App">
       <Header></Header>
       <h2>Projects</h2>
-      <ProjectViewer selectedBox={selectedBox} />
+      <ProjectViewer selectedBox={selectedBox} projects={projectBoxes} />
       <ProjectCarousel
         boxes={projectBoxes}
-        boxClickCallback={eventFromBoxClick => {
-          const { boxKey } = eventFromBoxClick.object;
-          let boxes = projectBoxes;
-          setProjectBoxes([projectBoxes[boxKey - 1]]);
-          setSelectedBox(boxKey);
+        boxClickCallback={box => {
+          console.log("box => ", box);
+          setSelectedBox(box);
         }}
       />
       <h2>Work History</h2>
