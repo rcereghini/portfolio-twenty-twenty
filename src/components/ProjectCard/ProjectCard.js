@@ -11,6 +11,12 @@ const ProjectCard = props => {
       <div className="project-card-description">
         <h2>{box.projectTitle}</h2>
         <p>{box.projectDescription}</p>
+        <div className="project-card-link-container">
+          <a className="project-card-link">DEMO</a>
+          <a className="project-card-link">
+            <i class="fab fa-github"></i>View Github
+          </a>
+        </div>
       </div>
     </div>
   );

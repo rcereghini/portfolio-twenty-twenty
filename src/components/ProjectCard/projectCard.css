@@ -16,6 +16,19 @@
 .project-card-image {
   border-bottom: 1px solid #ddd;
   width: 600px;
+  height: 300px;
   border-top-right-radius: 50px;
   border-top-left-radius: 50px;
+}
+
+.project-card-link {
+  padding: 1em;
+  border: 1px solid #ddd;
+  margin: 0.5em;
+  border-radius: 25px;
+}
+
+.project-card-link-container {
+  display: flex;
+  justify-content: center;
 }

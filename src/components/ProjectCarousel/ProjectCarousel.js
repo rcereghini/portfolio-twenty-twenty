@@ -69,7 +69,10 @@ const ProjectCarousel = props => {
                   <Box
                     boxKey={i + 1}
                     key={i + 1}
-                    boxClickCallback={() => props.boxClickCallback(box)}
+                    boxClickCallback={() => {
+                      console.log("click!");
+                      props.boxClickCallback(box);
+                    }}
                     position={box.boxLocation}
                   />
                 );
