@@ -45,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <h2>Projects</h2>
+      <h2 className="section-title">Projects</h2>
       <ProjectViewer selectedBox={selectedBox} projects={projectBoxes} />
       <ProjectCarousel
         boxes={projectBoxes}
@@ -54,9 +54,9 @@ function App() {
           setSelectedBox(box);
         }}
       />
-      <h2>Work History</h2>
+      <h2 className="section-title">Work History</h2>
       <WorkHistory />
-      <h2>Experience</h2>
+      <h2 className="section-title">Experience</h2>
       <div className="education-cards">
         <ExperienceTicker
           count={2000}

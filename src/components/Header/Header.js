@@ -19,16 +19,16 @@ const Header = () => {
     <div className="header-main">
       <img src={avatar} className="avatar-image"></img>
       <div className="logo-main">
-        <img className="logo-main" src={htmlLogo}></img>
-        <img className="logo-main" src={cssLogo}></img>
-        <img className="logo-main" src={jsLogo}></img>
-        <img className="logo-main" src={reactLogo}></img>
-        <img className="logo-main" src={reduxLogo}></img>
-        <img className="logo-main" src={vueLogo}></img>
-        <img className="logo-main" src={nodeLogo}></img>
-        <img className="logo-main" src={firebaseLogo}></img>
-        <img className="logo-main" src={csharpLogo}></img>
-        <img className="logo-main" src={sqlLogo}></img>
+        <img className="logo" src={htmlLogo}></img>
+        <img className="logo" src={cssLogo}></img>
+        <img className="logo" src={jsLogo}></img>
+        <img className="logo" src={reactLogo}></img>
+        <img className="logo" src={reduxLogo}></img>
+        <img className="logo" src={vueLogo}></img>
+        <img className="logo" src={nodeLogo}></img>
+        <img className="logo" src={firebaseLogo}></img>
+        <img className="logo" src={csharpLogo}></img>
+        <img className="logo" src={sqlLogo}></img>
         {/* <img className="logo-main" src={vueLogo}></img>
         <img className="logo-main" src={vueLogo}></img>
         <img className="logo-main" src={vueLogo}></img>
@@ -37,7 +37,9 @@ const Header = () => {
         <img className="logo-main" src={vueLogo}></img>
         <img className="logo-main" src={vueLogo}></img> */}
       </div>
-      <ContactInfo></ContactInfo>
+      <div className="header-contact-info">
+        <ContactInfo></ContactInfo>
+      </div>
     </div>
   );
 };

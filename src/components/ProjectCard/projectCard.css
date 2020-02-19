@@ -26,6 +26,11 @@
   border: 1px solid #ddd;
   margin: 0.5em;
   border-radius: 25px;
+  text-decoration: none;
+}
+
+.project-card-link:visited {
+  color: black;
 }
 
 .project-card-link-container {

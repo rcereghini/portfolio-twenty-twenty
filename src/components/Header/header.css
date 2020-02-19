@@ -59,3 +59,22 @@
   justify-content: center;
   align-items: center;
 }
+
+@media only screen and (max-width: 900px) {
+  .header-main {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 150px 200px 1fr;
+  }
+  .logo-main {
+    grid-row: 3;
+    max-width: 80vw;
+  }
+  .avatar-image {
+    justify-self: center;
+  }
+  .header-contact-info {
+    width: 300px;
+    justify-self: center;
+  }
+}

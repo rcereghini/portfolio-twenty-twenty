@@ -15,3 +15,7 @@
   cursor: pointer;
   background: linear-gradient(to bottom, #f4f6ff 0%, #e6eef7 44%, #e3e8ed 100%);
 }
+
+.work-history-description {
+  font-size: 1.4em;
+}

@@ -6,34 +6,48 @@ const ContactInfo = () => {
     <div className="contact-info-main">
       {/* <h2 className="contact-info-title">Contact Info</h2> */}
       {/* <hr></hr> */}
-      <table className="contact-table">
-        <tbody>
-          <tr>
-            <td>
+      <div className="contact-table">
+        <div>
+          <div style={{ display: "flex" }}>
+            <a
+              style={{ width: "100%", marginRight: ".3em" }}
+              href="tel:4804449873"
+            >
               <i class="fas fa-phone"></i>
-            </td>
-            <td>
-              <p>480.444.9873</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </a>
+          </div>
+
+          <div>
+            <p>480.444.9873</p>
+          </div>
+        </div>
+        <div>
+          <div style={{ display: "flex" }}>
+            <a
+              style={{ width: "100%", marginRight: ".3em" }}
+              href="mailto:rcereghini@gmail.com"
+            >
               <i class="fas fa-envelope"></i>
-            </td>
-            <td>
-              <p>rcereghini@gmail.com</p>
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </a>
+          </div>
+          <div>
+            <p>rcereghini@gmail.com</p>
+          </div>
+        </div>
+        <div>
+          <div style={{ display: "flex" }}>
+            <a
+              style={{ width: "100%", marginRight: ".3em" }}
+              href="github.com/rcereghini"
+            >
               <i class="fab fa-github"></i>
-            </td>
-            <td>
-              <p>github.com/rcereghini</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </a>
+          </div>
+          <div>
+            <p>github.com/rcereghini</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

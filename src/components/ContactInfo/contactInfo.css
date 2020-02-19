@@ -9,18 +9,34 @@
   margin: 0.3em;
 }
 
-.contact-table > tbody > tr {
+.contact-table > div {
   display: grid;
   grid-template-columns: 60px 1fr;
 }
 
-.contact-table > tbody > tr > td > i {
+.section-title {
+  margin-top: 4em;
+  font-size: 2em;
+}
+
+/* .contact-table > tbody > tr > td > i {
   padding: 1em;
   border: 1px solid #ddd;
   background-color: white;
   border-radius: 5px;
+} */
+.contact-table > div > div > a {
+  padding: 1em;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
 }
-.contact-table > tbody > tr > td > p {
+.contact-table > tbody > tr > td > a:visited {
+  color: black;
+}
+.contact-table > div > div > p {
   padding: 1em;
   border: 1px solid #ddd;
   border-radius: 5px;

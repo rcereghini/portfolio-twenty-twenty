@@ -5,19 +5,22 @@ import "./workHistory.css";
 const workHistoryRecords = [
   {
     title: "Petroleum Rx, Web Developer",
-    description: "Did wonderful things and greatness."
+    description:
+      "Working on accounting web application for petroleum jobbers.  Angular.js to Angular Conversion - Web Components - Vue, VueX, Vue Router - DataTables - AG Grid - Highcharts - ES6 JavaScript - SQL "
   },
   {
     title: "Freelance Web Development",
-    description: "Moreso free than anything..."
+    description: "React, Shopify"
   },
   {
     title: "Neureka, Web Developer",
-    description: "Did wonderful things and greatness."
+    description:
+      "Python/Django and React Native Full-Stack development for a restaurant review and dinner scheduling application. Coordinated remotely with team. "
   },
   {
     title: "Clear Title, Digital Marketing",
-    description: "Did wonderful things and greatness."
+    description:
+      "HTML - CSS - JavaScript - React - WordPress - Wix - HTML Emails - Salesforce Customizations - Process Automation - SEO - Facebook Ads - Social Media - Adobe Photoshop/Illustrator/InDesign - Copywriting - SproutSocial - Zapier"
   }
 ];
 
