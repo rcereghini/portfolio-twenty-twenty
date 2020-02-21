@@ -9,7 +9,14 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [selectedBox, setSelectedBox] = useState({});
+  const [selectedBox, setSelectedBox] = useState({
+    projectTitle: "Select a Box",
+    projectDescription: "View my Projects",
+    projectImage: "",
+    projectGithub: "",
+    projectLink: "",
+    boxLocation: []
+  });
   const [projectBoxes, setProjectBoxes] = useState([
     {
       projectTitle: "News Feed",
@@ -42,11 +49,16 @@ function App() {
     }
   ]);
 
+  // setSelectedBox(projectBoxes[0]);
+
   return (
     <div className="App">
       <Header></Header>
       <h2 className="section-title">Projects</h2>
-      <ProjectViewer selectedBox={selectedBox} projects={projectBoxes} />
+      <ProjectViewer
+        selectedBox={selectedBox ? selectedBox : projectBoxes[0]}
+        projects={projectBoxes}
+      />
       <ProjectCarousel
         boxes={projectBoxes}
         boxClickCallback={box => {
@@ -64,7 +76,7 @@ function App() {
         ></ExperienceTicker>
         <EducationCard
           title="Self-Taught"
-          description="Lots of documentation."
+          description="Started my education on freecodecamp, Udemy, Lynda, SoloLearn and other tutorial or video streaming sites as I was developing WordPress sites for clients as a digital marketer. "
         ></EducationCard>
         <EducationCard
           title="Arizona State University"

@@ -7,25 +7,33 @@ const ProjectCard = props => {
   console.log("project =>", box);
   return (
     <div className="project-card-main">
-      <img className="project-card-image" src={box.projectImage}></img>
+      {box.projectImage ? (
+        <img className="project-card-image" src={box.projectImage}></img>
+      ) : (
+        <span></span>
+      )}
       <div className="project-card-description">
         <h2>{box.projectTitle}</h2>
         <p>{box.projectDescription}</p>
         <div className="project-card-link-container">
-          <a
-            href={box.projectLink}
-            target="_blank"
-            className="project-card-link"
-          >
-            DEMO
-          </a>
-          <a
-            href={box.projectGithub}
-            target="_blank"
-            className="project-card-link"
-          >
-            <i class="fab fa-github"></i>View Github
-          </a>
+          {box.projectLink ? (
+            <a
+              href={box.projectLink}
+              target="_blank"
+              className="project-card-link"
+            >
+              DEMO
+            </a>
+          ) : null}
+          {box.projectGithub ? (
+            <a
+              href={box.projectGithub}
+              target="_blank"
+              className="project-card-link"
+            >
+              <i class="fab fa-github"></i>View Github
+            </a>
+          ) : null}
         </div>
       </div>
     </div>

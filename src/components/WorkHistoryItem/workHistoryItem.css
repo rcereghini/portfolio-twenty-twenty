@@ -3,10 +3,8 @@
   border-radius: 5px;
   width: 650px;
   margin: 0 auto;
-}
-
-.work-history-item {
   padding: 0em;
+  line-height: 1.5em;
 }
 
 .work-history-title {
@@ -17,5 +15,7 @@
 }
 
 .work-history-description {
-  font-size: 1.4em;
+  font-size: 1.3em;
+  padding: 1em;
+  padding-top: 0.7em;
 }
