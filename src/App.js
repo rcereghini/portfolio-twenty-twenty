@@ -83,11 +83,7 @@ function App() {
           description="Bachelor of Interdisciplinary Sciences"
         ></EducationCard>
       </div>
-      {/* <h1>About Me?</h1>
-      <h1>
-        For More Information... To Receive Additional Information. Schedule an
-        appointment?
-      </h1> */}
+      //About Me Section?
     </div>
   );
 }
