@@ -18,4 +18,17 @@
   font-size: 1.3em;
   padding: 1em;
   padding-top: 0.7em;
+  animation-name: growHeight;
+  height: 100px;
+  animation-duration: 0.3s;
+}
+
+@keyframes growHeight {
+  from {
+    visibility: hidden;
+    height: 0px;
+  }
+  to {
+    height: 100px;
+  }
 }

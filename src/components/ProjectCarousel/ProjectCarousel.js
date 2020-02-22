@@ -36,11 +36,11 @@ function Box(props) {
           return sceneObject.type === "Mesh";
         });
 
-        sceneMeshes.forEach(mesh => {
-          if (mesh.boxKey === e.object.boxKey) {
-            mesh.scale.set(3, 3, 3);
-          } else mesh.scale.set(1, 1, 1);
-        });
+        // sceneMeshes.forEach(mesh => {
+        //   if (mesh.boxKey === e.object.boxKey) {
+        //     mesh.scale.set(3, 3, 3);
+        //   } else mesh.scale.set(1, 1, 1);
+        // });
 
         props.boxClickCallback(e);
       }}

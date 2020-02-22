@@ -23,7 +23,7 @@ function App() {
       projectDescription: "News Feed",
       projectImage:
         "https://www.rcereghini.com/static/newsFeed-7ea32f8f4d7f3393faf91795d4faf8df.jpg",
-      projectGithub: "",
+      projectGithub: "https://github.com/rcereghini/news-feed",
       projectLink: "https://wonderful-edison-f69832.netlify.com/",
       boxLocation: [-10, 0, 0]
     },
@@ -43,7 +43,7 @@ function App() {
         "A facial recognition app using React, Redux, Node.js, Clarifai, Tachyons, Particles, Tilt, and Heroku.",
       projectImage:
         "https://www.rcereghini.com/static/box3-bbe769fb7162b131d01e76e38dc146a0.png",
-      projectGithub: "",
+      projectGithub: "https://github.com/rcereghini/facial-recognition-counter",
       projectLink: "https://facial-recognition-counter.herokuapp.com/",
       boxLocation: [10, 0, 0]
     }
@@ -83,7 +83,7 @@ function App() {
           description="Bachelor of Interdisciplinary Sciences"
         ></EducationCard>
       </div>
-      //About Me Section?
+      {/* //About Me Section? */}
     </div>
   );
 }
