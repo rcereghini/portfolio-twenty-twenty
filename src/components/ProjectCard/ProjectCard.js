@@ -3,8 +3,6 @@ import "./projectCard.css";
 
 const ProjectCard = props => {
   let { project, box } = props;
-  console.log("pc prop", props);
-  console.log("project =>", box);
   return (
     <div className="project-card-main">
       {box.projectImage ? (

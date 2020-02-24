@@ -14,14 +14,16 @@ function Box(props) {
   let clockwiseRotate = false;
 
   useFrame(() => {
-    if (rotateCap >= 150) {
+    if (rotateCap >= 360) {
       clockwiseRotate = !clockwiseRotate;
       rotateCap = 0;
     }
     if (clockwiseRotate) {
-      mesh.current.rotation.y += 0.003;
+      // mesh.current.rotation.y += 0.003;
+      mesh.current.rotation.y += 0.01;
     } else {
-      mesh.current.rotation.y -= 0.003;
+      mesh.current.rotation.y -= 0.01;
+      // mesh.current.rotation.y -= 0.003;
     }
     rotateCap++;
   });
@@ -44,8 +46,8 @@ function Box(props) {
 
         props.boxClickCallback(e);
       }}
-      // onPointerOver={e => setHover(true)}
-      // onPointerOut={e => setHover(false)}
+      onPointerOver={e => setHover(true)}
+      onPointerOut={e => setHover(false)}
     >
       <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
       <meshStandardMaterial
