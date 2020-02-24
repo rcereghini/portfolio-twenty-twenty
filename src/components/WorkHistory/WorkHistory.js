@@ -27,6 +27,7 @@ const workHistoryRecords = [
 const WorkHistory = () => {
   return (
     <div className="work-history-main">
+      <h2 className="section-label">Work History</h2>
       {workHistoryRecords.map(record => {
         const { title, description } = record;
         return (

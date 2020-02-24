@@ -1,10 +1,16 @@
 .work-history-item {
   border: 1px solid #ddd;
-  border-radius: 5px;
+  box-sizing: border-box;
+  /* border-radius: 5px; */
   width: 650px;
   margin: 0 auto;
   padding: 0em;
   line-height: 1.5em;
+}
+
+.work-history-item:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .work-history-title {
@@ -15,12 +21,20 @@
 }
 
 .work-history-description {
+  height: 100px;
+  animation-duration: 0.3s;
   font-size: 1.3em;
   padding: 1em;
   padding-top: 0.7em;
   animation-name: growHeight;
-  height: 100px;
-  animation-duration: 0.3s;
+}
+
+.work-history-description-hidden {
+  font-size: 1.3em;
+  height: 0px;
+  visibility: hidden;
+  animation-duration: 1s;
+  animation-name: shrinkHeight;
 }
 
 @keyframes growHeight {
@@ -30,5 +44,15 @@
   }
   to {
     height: 100px;
+  }
+}
+
+@keyframes shrinkHeight {
+  from {
+    height: 100px;
+  }
+  to {
+    visibility: hidden;
+    height: 0px;
   }
 }

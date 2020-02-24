@@ -14,7 +14,9 @@ const WorkHistoryItem = props => {
       </h3>
       {isDescriptionVisible ? (
         <p className="work-history-description">{props.description}</p>
-      ) : null}
+      ) : (
+        <span className="work-history-description-hidden"></span>
+      )}
     </div>
   );
 };

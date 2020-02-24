@@ -1,2 +1,14 @@
 .work-history-main {
 }
+
+.section-label {
+  border: 1px solid #ddd;
+  width: 650px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 0px;
+  padding: 0.5em;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 5em;
+}

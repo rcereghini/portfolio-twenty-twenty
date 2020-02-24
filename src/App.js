@@ -54,7 +54,6 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <h2 className="section-title">Projects</h2>
       <ProjectViewer
         selectedBox={selectedBox ? selectedBox : projectBoxes[0]}
         projects={projectBoxes}
@@ -66,7 +65,6 @@ function App() {
           setSelectedBox(box);
         }}
       />
-      <h2 className="section-title">Work History</h2>
       <WorkHistory />
       <h2 className="section-title">Experience</h2>
       <div className="education-cards">
