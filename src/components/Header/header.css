@@ -27,6 +27,12 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f6ff', endColorstr='#e3e8ed',GradientType=0 ); /* IE6-9 */
 }
 
+@media only screen and (min-width: 1300px) {
+  .header-main {
+    grid-column: 1 / span 2;
+  }
+}
+
 .avatar-image {
   border-radius: 50%;
   max-width: 150px;

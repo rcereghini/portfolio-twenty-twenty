@@ -4,12 +4,12 @@ import { Canvas, useFrame } from "react-three-fiber";
 import img from "../../assets/metal.jpg";
 import { logDOM } from "@testing-library/react";
 import "./projectCarousel.css";
+import { EllipseCurve } from "three";
 
 function Box(props) {
   const mesh = useRef();
-
   const [hovered, setHover] = useState(false);
-  // const [active, setActive] = useState(false);
+
   let rotateCap = 0;
   let clockwiseRotate = false;
 
@@ -32,33 +32,45 @@ function Box(props) {
     <mesh
       {...props}
       ref={mesh}
-      scale={[2, 2, 2]}
+      scale={
+        props.boxKey === props.selectedBox.boxIdNumber ? [2, 2, 2] : [1, 1, 1]
+      }
+      onUpdate={self => {
+        props.boxKey === props.selectedBox.boxIdNumber
+          ? self.scale.set(2, 2, 2)
+          : self.scale.set(1, 1, 1);
+      }}
       onClick={e => {
         let sceneMeshes = e.object.parent.children.filter(sceneObject => {
           return sceneObject.type === "Mesh";
         });
-
-        // sceneMeshes.forEach(mesh => {
-        //   if (mesh.boxKey === e.object.boxKey) {
-        //     mesh.scale.set(3, 3, 3);
-        //   } else mesh.scale.set(1, 1, 1);
-        // });
-
-        props.boxClickCallback(e);
+        props.boxClickCallback(e, props.boxKey);
       }}
-      onPointerOver={e => setHover(true)}
-      onPointerOut={e => setHover(false)}
+      onPointerOver={e => {
+        props.boxHoverCallback(props.boxKey);
+        setHover(true);
+      }}
+      onPointerOut={e => {
+        props.boxHoverCallback();
+        setHover(false);
+      }}
     >
       <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
       <meshStandardMaterial
         attach="material"
-        color={hovered ? "firebrick" : "orange"}
+        color={
+          hovered || props.boxKey === props.selectedBox.boxIdNumber
+            ? "firebrick"
+            : "orange"
+        }
       />
     </mesh>
   );
 }
 
 const ProjectCarousel = props => {
+  const [hoveredBoxId, setHoveredBoxId] = useState(-99);
+
   return (
     <div className="project-carousel-main">
       <div className="project-carousel-inner">
@@ -70,10 +82,14 @@ const ProjectCarousel = props => {
                 return (
                   <Box
                     boxKey={i + 1}
+                    selectedBox={props.selectedBox}
                     key={i + 1}
                     boxClickCallback={() => {
-                      console.log("click!");
                       props.boxClickCallback(box);
+                    }}
+                    boxHoverCallback={providedId => {
+                      if (providedId) setHoveredBoxId(providedId);
+                      else setHoveredBoxId(-99);
                     }}
                     position={box.boxLocation}
                   />
@@ -81,6 +97,11 @@ const ProjectCarousel = props => {
               })
             : null}
         </Canvas>
+        <p>
+          {hoveredBoxId && hoveredBoxId !== -99
+            ? props.boxes[hoveredBoxId - 1].projectTitle
+            : props.selectedBox.projectTitle}
+        </p>
       </div>
     </div>
   );

@@ -11,4 +11,11 @@
   box-sizing: border-box;
   margin: 0 auto;
   margin-top: 5em;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+}
+
+@media only screen and (min-width: 1300px) {
+  .section-label {
+    margin-top: 1em;
+  }
 }

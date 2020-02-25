@@ -1,5 +1,8 @@
 .education-card-main {
   border: 1px solid #ddd;
   margin: 1em;
-  width: 700px;
+  width: 95%;
+  padding: 1em;
+  border-radius: 25px;
+  background-color: white;
 }

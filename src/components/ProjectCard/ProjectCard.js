@@ -29,7 +29,7 @@ const ProjectCard = props => {
               target="_blank"
               className="project-card-link"
             >
-              <i class="fab fa-github"></i>View Github
+              <i class="fab fa-github"></i> View Github
             </a>
           ) : null}
         </div>
