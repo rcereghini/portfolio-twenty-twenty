@@ -80,7 +80,7 @@ function App() {
           ></ExperienceTicker>
           <EducationCard
             title="Self-Taught"
-            description="Started my education on freecodecamp, Udemy, Lynda, SoloLearn and other tutorial or video streaming sites as I was developing WordPress sites for clients as a digital marketer. "
+            description="To include benefits of a self-taught education and my purpose/goals as a software engineer."
           ></EducationCard>
           <EducationCard
             title="Arizona State University"
