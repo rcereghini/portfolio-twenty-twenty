@@ -1,9 +1,12 @@
 .header-main {
   padding: 0.7em;
+  /* position: fixed; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ddd;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f4f6ff+0,e6eef7+44,e3e8ed+100 */
   background: #f4f6ff; /* Old browsers */
   background: -moz-linear-gradient(
