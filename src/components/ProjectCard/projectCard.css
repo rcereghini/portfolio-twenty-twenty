@@ -29,6 +29,9 @@
   margin: 0.5em;
   border-radius: 25px;
   text-decoration: none;
+  background: linear-gradient(to bottom, #f4f6ff 0%, #e6eef7 44%, #e3e8ed 100%);
+  cursor: pointer;
+  box-shadow: 1px 1px 0px #ddd;
 }
 
 .project-card-link:visited {
